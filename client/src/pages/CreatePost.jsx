@@ -23,7 +23,11 @@ const CreatePost = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSurperiseMe = () => {};
+  //for getting the pre prompt suggestions to generate
+  const handleSurperiseMe = () => {
+    const randomPrompt = getRandomPrompt(form.prompt);
+    setForm({ ...form, prompt: randomPrompt });
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
