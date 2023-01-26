@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
-import { Loader, Card, FormField } from '../components';
+import { Loader, Card, FormField } from "../components";
 
 const RenderCards = ({ data, title }) => {
   if (data?.length > 0) {
@@ -15,7 +15,7 @@ const Home = () => {
   const [loading, setLoading] = useState(false);
   const [allPosts, setAllPosts] = useState(null);
 
-  const [searchText, setsearchText] = useState('');
+  const [searchText, setsearchText] = useState("");
 
   const [searchedResults, setSearchedResults] = useState(null);
   const [searchTimeout, setSearchTimeout] = useState(null);
@@ -24,10 +24,10 @@ const Home = () => {
     const fetchPosts = async () => {
       setLoading(true);
       try {
-        const response = await fetch('http://localhost:8080/api/v1/post', {
-          method: 'GET',
+        const response = await fetch("http://localhost:8080/api/v1/post", {
+          method: "GET",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
         });
 
@@ -92,7 +92,7 @@ const Home = () => {
           <>
             {searchText && (
               <h2 className="font-medium text-[#666e75] text-xl mb-3">
-                Showing results for{' '}
+                Showing results for{" "}
                 <span className="text-[#222328]">{searchText}</span>
               </h2>
             )}
