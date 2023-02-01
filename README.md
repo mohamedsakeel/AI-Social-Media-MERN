@@ -1,4 +1,7 @@
 # ms-ai-dall-e
+
+[![Render Status](https://render.com/api/deploy/srv-cf7uqeta499fsd1bu1gg/status.svg)](https://render.com/deploys)
+
 A platform for generating imaginative images using OpenAI's DALL-E API
 
 ## Overview
