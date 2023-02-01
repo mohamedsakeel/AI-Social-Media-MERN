@@ -1,6 +1,7 @@
 # ms-ai-dall-e
 
-[![Render Status](https://render.com/api/deploy/srv-cf7uqeta499fsd1bu1gg/status.svg)](https://render.com/deploys)
+[![MERN Stack](https://img.shields.io/badge/-MERN%20Stack-informational?style=flat-square&logo=MongoDB&logoColor=white&labelColor=000000&color=6C9EE1)](https://mern.io)
+
 
 A platform for generating imaginative images using OpenAI's DALL-E API
 
