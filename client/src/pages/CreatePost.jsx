@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-import { preview } from "../assets";
-import { getRandomPrompt } from "../utils";
-import { FormField, Loader } from "../components";
+import { preview } from '../assets';
+import { getRandomPrompt } from '../utils';
+import { FormField, Loader } from '../components';
 
 const CreatePost = () => {
   const navigate = useNavigate();
   const [form, setForm] = useState({
-    name: "",
-    prompt: "",
-    photo: "",
+    name: '',
+    prompt: '',
+    photo: '',
   });
   const [generatingImg, setGeneratingImg] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -19,10 +19,10 @@ const CreatePost = () => {
     if (form.prompt) {
       try {
         setGeneratingImg(true);
-        const response = await fetch("http://localhost:8080/api/v1/dalle", {
-          method: "POST",
+        const response = await fetch('http://localhost:8080/api/v1/dalle', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify({ prompt: form.prompt }),
         });
@@ -36,7 +36,7 @@ const CreatePost = () => {
         setGeneratingImg(false);
       }
     } else {
-      alert("Please enter a prompt");
+      alert('Please enter a prompt');
     }
   };
 
@@ -47,24 +47,24 @@ const CreatePost = () => {
       setLoading(true);
 
       try {
-        const response = await fetch("http://localhost:8080/api/v1/post", {
-          method: "POST",
+        const response = await fetch('http://localhost:8080/api/v1/post', {
+          method: 'POST',
           headers: {
-            "Content-Type": "application/json",
+            'Content-Type': 'application/json',
           },
           body: JSON.stringify(form),
         });
 
         await response.json();
 
-        navigate("/");
+        navigate('/');
       } catch (error) {
         alert(error);
       } finally {
         setLoading(false);
       }
     } else {
-      alert("Please enter a prompt and generate an image");
+      alert('Please enter a prompt and generate an image');
     }
   };
 
@@ -96,7 +96,7 @@ const CreatePost = () => {
             LabelName='Your Name'
             type='text'
             name='name'
-            placeholder='Sakeel'
+            placeholder='Type Your Name Here...'
             value={form.name}
             handleChange={handleChange}
           />
@@ -140,7 +140,7 @@ const CreatePost = () => {
             onClick={generateImage}
             className='text-white bg-green-700 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'
           >
-            {generatingImg ? "Generating..." : "Generate"}
+            {generatingImg ? 'Generating...' : 'Generate'}
           </button>
         </div>
         <div className='mt-10'>
@@ -152,7 +152,7 @@ const CreatePost = () => {
             type='submit'
             className='mt-3 text-white bg-[#6469ff] font-medium rounded-md textsm w-full sm:w-auto px-5 py-2.5 text-center'
           >
-            {loading ? "Sharing..." : "Share with the community"}
+            {loading ? 'Sharing...' : 'Share with the community'}
           </button>
         </div>
       </form>
